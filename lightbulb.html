@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lightbulb</title>
+    <link rel="stylesheet" href="lightbulb.css">
+</head>
+
+<body id="clr">
+    
+
+
+
+    <div id="cgcolor">
+        <button class="btn" onclick="myfun()">Change theme</button>
+
+    </div>
+    <p><a id="Messi-link" href="#">Lionel Messi</a></p>
+    <p><a id="cr7-link" href="#">Cristiano Ronaldo</a></p>
+    <p><a id="None" href="#">none</a></p>
+    
+    <article class="blog-post" id="Lionel-messi">
+        <h2>Greatest Of All Time</h2>
+        <p>Lionel Messi, the maestro of the soccer field, dances with the ball as if it were an extension of his very
+            being. With breathtaking finesse, he weaves through defenses, leaving a trail of mesmerized spectators in
+            his wake. His feet, like paintbrushes on a canvas, create masterpieces with every touch, conjuring moments
+            of sheer magic that define the beautiful game.
+
+            In Messi's presence, the stadium becomes a theater, and the ball obeys his every command, moving in harmony
+            with his vision and skill. His eyes, gleaming with determination and passion, reflect the dreams of millions
+            who adore him. In the arena of competition, he is not just a player; he is an artist, crafting symphonies of
+            brilliance and grace with each pass, each dribble, and each goal.
+
+            Off the pitch, he carries himself with humility, a gentle soul whose dedication to his craft is as profound
+            as his love for the sport. Messi embodies the spirit of perseverance, transforming challenges into triumphs
+            and setbacks into inspiration.
+
+            He is not merely a footballer; he is a legend, an inspiration, and a testament to the heights that human
+            potential can reach. Lionel Messi, the name resonates with the echoes of greatness, etched in the annals of
+            football history, reminding us all of the boundless beauty that resides in the world of sports.</p>
+    </article>
+    <article class="blog-post" id="cr7-2">
+        <h2>Cristiano Ronaldo</h2>
+        <p>Cristiano Ronaldo, the epitome of athletic excellence, graces the soccer field with a blend of power,
+            finesse, and unyielding determination. His presence ignites the stadium, electrifying the atmosphere with an
+            aura of confidence and unparalleled skill.
+
+            With a physique sculpted for athleticism and a mind honed for strategy, Ronaldo moves with a purpose that
+            transcends the game. His speed is like a lightning bolt, his agility reminiscent of a dancer, and his
+            goal-scoring prowess akin to a marksman hitting a bullseye. Every leap seems to defy gravity, and every shot
+            carries the promise of brilliance, leaving fans in awe and adversaries in despair.
+
+            Off the pitch, Ronaldo embodies resilience. His journey from a humble beginning to global stardom is a
+            testament to his unshakable work ethic and unwavering self-belief. He is not just a footballer; he is a
+            phenomenon, a symbol of ambition, and a source of inspiration for aspiring athletes worldwide.
+
+            Beyond his athletic prowess, Ronaldo is a philanthropist, a role model, and a charismatic leader. His
+            dedication to charitable causes and his ability to connect with people on a personal level showcase a depth
+            of character that matches his sporting achievements.
+
+            In the realm of football, Cristiano Ronaldo is more than a player; he is a legend, a relentless force of
+            nature whose legacy continues to inspire generations, reminding us of the extraordinary heights that human
+            determination and talent can achieve.
+        </p>
+    </article>
+
+    <script>
+        function myfun() {
+            let id = document.getElementById("cgcolor");
+            let stle = window.getComputedStyle(id);
+            if (stle.getPropertyValue('background-color') == "rgb(255, 255, 255)") {
+                document.getElementById("cgcolor").style.backgroundColor = "black";
+                document.getElementById("clr").style.backgroundColor = "black";
+                document.getElementById("Lionel-messi").style.color = "rgb(255,255,255)";
+                document.getElementById("cr7-2").style.color = "rgb(255,255,255)";
+            }
+            else {
+                document.getElementById("cgcolor").style.backgroundColor = "rgb(255, 255, 255)";
+                document.getElementById("clr").style.backgroundColor = "rgb(255, 255, 255)";
+                document.getElementById("Lionel-messi").style.color = "black";
+                document.getElementById("cr7-2").style.color = "black";
+
+            }
+        }
+
+
+        const lionelcontent = document.getElementById("Lionel-messi");
+        const cr7content = document.getElementById('cr7-2');
+        const messiLink = document.getElementById('Messi-link');
+        const cr7Link = document.getElementById('cr7-link');
+
+        lionelcontent.style.display = "none";
+        cr7content.style.display = 'none';
+
+        function toggleContent(person) {
+            switch (person) {
+                case 'Lionel':
+                    lionelcontent.style.display = 'block';
+                    cr7content.style.display = 'none';
+                    break;
+                case 'cr7':
+                    lionelcontent.style.display = 'none';
+                    cr7content.style.display = 'block';
+                    break;
+                case 'none':
+                    lionelcontent.style.display = 'none';
+                    cr7content.style.display = 'none';
+                default:
+                    lionelcontent.style.display = 'none';
+                    cr7content.style.display = 'none';
+            }
+        }
+        messiLink.addEventListener('click', function () {
+            toggleContent('Lionel');
+        });
+
+        cr7Link.addEventListener('click', function () {
+            toggleContent('cr7');
+        });
+
+        document.getElementById('None').addEventListener('click', function () {
+            toggleContent('none');
+        });
+
+
+    </script>
+
+
+
+</body>
+
+</html>
